@@ -8,11 +8,11 @@
 
 - [vite](https://vitejs.dev/) 👍 👍 ⚠️
 
-- also checkout
+## Not demoed but worth exploring further
 
 - [snowpack](https://www.snowpack.dev/) ⚠️
 
-- [wmr](https://github.com/preactjs/wmr) 👍
+- [wmr](https://github.com/preactjs/wmr) 👍 ⚠️
 
 ## Dependency management and monorepo tools
 
