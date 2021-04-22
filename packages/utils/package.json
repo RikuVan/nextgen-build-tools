@@ -1,0 +1,31 @@
+{
+  "name": "@vaisala/utils",
+  "version": "0.0.1",
+  "description": "",
+  "private": false,
+  "main": "./dist/utils.cjs.js",
+  "module": "./dist/utils.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/utils.es.js",
+      "require": "./dist/utils.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:js && npm run build:ts",
+    "build:js": "vite build",
+    "build:ts": "tsc -p ./tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.2.4",
+    "vite": "^2.2.1"
+  },
+  "dependencies": {
+    "date-fns": "^2.21.1"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@vaisala/kit",
+  "version": "0.0.1",
+  "description": "",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/kit.cjs.js",
+  "module": "./dist/kit.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/kit.es.js",
+      "require": "./dist/kit.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "start": "rollup -c --environment DEV --watch",
+    "build:rollup": "rollup -c",
+    "build": "npm run build:js && npm run build:ts",
+    "build:js": "vite build",
+    "build:ts": "tsc -p ./tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "sass": "^1.32.11",
+    "typescript": "^4.2.4",
+    "vite": "^2.2.1"
+  },
+  "dependencies": {
+    "@vaisala/utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  }
+}

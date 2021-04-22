@@ -1,0 +1,82 @@
+<html>
+<head>
+  <style>
+    :root {
+      --background: linear-gradient(to top, #3a7bd5, #00d2ff); 
+      --color: rgba(255,255,255,.9);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .counter,
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    main {
+      min-height: 100vh;
+      color: var(--color);
+      background: var(--background);
+    }
+    button {
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      background: none;
+      border: 2px solid var(--color);
+      color: var(--color);
+      letter-spacing: .05rem;
+      outline: none;
+    }
+    button + button {
+      margin-left: 1rem;
+    }
+    h3 {
+     font-size: 2rem;
+     display: inline;
+     line-height: 100%;
+     margin: 0 0 1rem;
+     font-weight: lighter;
+     transition: opacity .5s;
+   }
+   h1 {
+    font-size: 5rem;
+   }
+  </style>
+
+  <script type="module">
+  import { React, ReactDOM } from 'https://unpkg.com/es-react'
+
+  import htm from 'https://unpkg.com/htm?module'
+  const html = htm.bind(React.createElement)
+
+  const Counter = props => {
+    const [count, setCount] = React.useState(parseInt(props.count))
+    return html`
+      <div class="counter">
+        <h1>${count}</h1>
+        <div>
+          <button onClick=${e => setCount(count - 1)}>Decrement</button>
+          <button onClick=${e => setCount(count + 1)}>Increment</button>
+        </div>
+      </div>
+    `
+  }
+
+  ReactDOM.render(
+    html`
+      <main>
+        <h1>ES6 modules</h1>
+        <h3>No script tags, no build step</h3>
+        <${Counter} count=0 />
+      </main>
+    `,
+    document.body
+  )
+
+</script>
+</head>
+<body></body>
+</html>
